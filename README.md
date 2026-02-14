@@ -1,4 +1,3 @@
-```markdown
 # API CRUD com Spring Boot
 
 ## Visão Geral
@@ -201,13 +200,10 @@ mvn test
 
 ## Autor
 
-```
 Julio Cesar
-```
 
 ---
 
 ## Licença
 
 Este projeto está licenciado sob a licença MIT.
-```
