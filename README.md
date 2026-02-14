@@ -1,14 +1,15 @@
-# Projeto Java — API CRUD com Spring Boot
+```markdown
+# API CRUD com Spring Boot
 
-## Descrição
+## Visão Geral
 
-Este projeto consiste em uma API REST desenvolvida em Java utilizando Spring Boot. A aplicação implementa operações CRUD completas e segue boas práticas de arquitetura, organização em camadas e padronização de código, com o objetivo de consolidar conhecimentos práticos em desenvolvimento backend.
+Este projeto é uma API REST desenvolvida com Spring Boot que realiza operações completas de CRUD para gerenciamento de pessoas. A aplicação segue princípios de arquitetura em camadas e boas práticas utilizadas no desenvolvimento backend profissional.
 
 ---
 
 ## Tecnologias Utilizadas
 
-- Java 17 ou superior
+- Java 17+
 - Spring Boot
 - Spring Web
 - Spring Data JPA
@@ -37,16 +38,16 @@ com.julio.crud
 
 ## Funcionalidades
 
-A API disponibiliza endpoints para gerenciamento de pessoas, permitindo:
+A API disponibiliza endpoints para:
 
-- Criação de registros
-- Listagem de dados
-- Atualização de informações
-- Remoção de registros
+- Criar registros
+- Listar dados
+- Atualizar informações
+- Deletar registros
 
 ---
 
-## Endpoints
+## Endpoints da API
 
 ### Criar Pessoa
 
@@ -54,7 +55,7 @@ A API disponibiliza endpoints para gerenciamento de pessoas, permitindo:
 POST /person/create
 ```
 
-Body JSON:
+Body:
 
 ```
 {
@@ -79,7 +80,7 @@ GET /person/read
 PUT /person/update/{id}
 ```
 
-Body JSON:
+Body:
 
 ```
 {
@@ -105,11 +106,11 @@ A aplicação utiliza PostgreSQL como sistema de gerenciamento de banco de dados
 Características:
 
 - Persistência real de dados
-- Estrutura escalável para aplicações reais
+- Estrutura escalável
 - Integração com Spring Data JPA
 - Criação automática de tabelas via Hibernate
 
-Configuração exemplo:
+Configuração de exemplo:
 
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/meubanco
@@ -129,20 +130,20 @@ spring.jpa.properties.hibernate.format_sql=true
 
 - Java instalado
 - Maven instalado
-- PostgreSQL instalado e rodando
+- PostgreSQL rodando
 
 ### Passos
 
 Clone o repositório:
 
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Julioguedes-dev/SpringBoot-Crud.git
 ```
 
-Acesse a pasta:
+Entre na pasta:
 
 ```
-cd seu-repositorio
+cd SpringBoot-Crud
 ```
 
 Execute:
@@ -161,14 +162,14 @@ http://localhost:8080
 
 ## Testes
 
-Os testes foram realizados utilizando Postman, validando:
+Os testes foram realizados utilizando Postman para validar:
 
 - Métodos HTTP
 - Respostas JSON
-- Status codes
+- Status HTTP
 - Tratamento de erros (400, 404, 405)
 
-Para executar testes automatizados:
+Para rodar testes automatizados:
 
 ```
 mvn test
@@ -176,22 +177,21 @@ mvn test
 
 ---
 
-## Segurança e Qualidade
+## Boas Práticas Aplicadas
 
-Boas práticas aplicadas no projeto:
-
-- Atualização de dependências vulneráveis
+- Arquitetura em camadas
+- Separação de responsabilidades
+- Injeção de dependência
+- Código limpo e organizado
 - Tratamento de exceções
-- Separação em camadas
-- Código limpo e legível
-- Logging configurado
-- Validação de entradas
+- Logs estruturados
+- Dependências atualizadas
 
 ---
 
 ## Objetivos do Projeto
 
-- Aprender Spring Boot na prática
+- Praticar desenvolvimento com Spring Boot
 - Entender arquitetura REST
 - Trabalhar com persistência usando JPA
 - Estruturar aplicações backend
