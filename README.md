@@ -198,3 +198,16 @@ mvn test
 - Versionar código com Git e GitHub
 
 ---
+
+## Autor
+
+```
+Julio Cesar
+```
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
+```
