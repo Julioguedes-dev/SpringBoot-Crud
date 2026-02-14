@@ -5,6 +5,7 @@ import com.julio.crud.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class PersonService {
@@ -22,10 +23,10 @@ public class PersonService {
     public Person create(Person person) {
         return personRepository.save(person);
     }
-    public void deleteById(Long id) {
+    public void deleteById(UUID id) {
         personRepository.deleteById(id);
     }
-    public Person updateById(Long id, Person person) {
+    public Person updateById(UUID id, Person person) {
         Person existing = personRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Person not found"));
 
