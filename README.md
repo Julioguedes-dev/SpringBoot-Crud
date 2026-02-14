@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto consiste em uma API REST desenvolvida em Java utilizando Spring Boot. A aplicação implementa operações CRUD completas e segue boas práticas de arquitetura, organização de camadas e padronização de código, com o objetivo de consolidar conhecimentos práticos em desenvolvimento backend.
+Este projeto consiste em uma API REST desenvolvida em Java utilizando Spring Boot. A aplicação implementa operações CRUD completas e segue boas práticas de arquitetura, organização em camadas e padronização de código, com o objetivo de consolidar conhecimentos práticos em desenvolvimento backend.
 
 ---
 
@@ -100,21 +100,25 @@ DELETE /person/delete/{id}
 
 ## Banco de Dados
 
-A aplicação utiliza banco H2 em memória:
+A aplicação utiliza PostgreSQL como sistema de gerenciamento de banco de dados relacional.
 
-- Inicialização automática
-- Criação automática de tabelas via JPA
-- Ideal para testes e desenvolvimento
+Características:
+
+- Persistência real de dados
+- Estrutura escalável para aplicações reais
+- Integração com Spring Data JPA
+- Criação automática de tabelas via Hibernate
 
 Configuração exemplo:
 
 ```
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
+spring.datasource.url=jdbc:postgresql://localhost:5432/meubanco
+spring.datasource.username=postgres
 spring.datasource.password=
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-spring.h2.console.enabled=true
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 ```
 
 ---
@@ -125,6 +129,7 @@ spring.h2.console.enabled=true
 
 - Java instalado
 - Maven instalado
+- PostgreSQL instalado e rodando
 
 ### Passos
 
