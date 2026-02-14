@@ -1,24 +1,26 @@
-# 🧩 CRUD API com Spring Boot
+# Projeto Java — API CRUD com Spring Boot
 
-Minha **primeira API REST** desenvolvida com **Spring Boot**, implementando um CRUD completo usando **Spring Data JPA** e banco **H2**.
+## Descrição
 
-Projeto feito totalmente na prática, lidando com erros reais (404, 405, 400) e aprendendo como resolvê-los no dia a dia de um backend Java.
+Este projeto consiste em uma API REST desenvolvida em Java utilizando Spring Boot. A aplicação implementa operações CRUD completas e segue boas práticas de arquitetura, organização de camadas e padronização de código, com o objetivo de consolidar conhecimentos práticos em desenvolvimento backend.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-- Java 17+
+- Java 17 ou superior
 - Spring Boot
 - Spring Web
 - Spring Data JPA
-- H2 Database
+- Banco de dados H2
 - Maven
 - Postman
+- JUnit
+- AssertJ
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 com.julio.crud
@@ -35,12 +37,28 @@ com.julio.crud
 
 ---
 
-## 📌 Endpoints da API
+## Funcionalidades
 
-### ➕ Criar Pessoa
-**POST** `/person/create`
+A API disponibiliza endpoints para gerenciamento de pessoas, permitindo:
 
-```json
+- Criação de registros
+- Listagem de dados
+- Atualização de informações
+- Remoção de registros
+
+---
+
+## Endpoints
+
+### Criar Pessoa
+
+```
+POST /person/create
+```
+
+Body JSON:
+
+```
 {
   "name": "Julio",
   "age": 22
@@ -49,15 +67,23 @@ com.julio.crud
 
 ---
 
-### 📄 Listar Pessoas
-**GET** `/person/read`
+### Listar Pessoas
+
+```
+GET /person/read
+```
 
 ---
 
-### ✏️ Atualizar Pessoa
-**PUT** `/person/update/{id}`
+### Atualizar Pessoa
 
-```json
+```
+PUT /person/update/{id}
+```
+
+Body JSON:
+
+```
 {
   "name": "Julio Cesar",
   "age": 23
@@ -66,34 +92,106 @@ com.julio.crud
 
 ---
 
-### ❌ Deletar Pessoa
-**DELETE** `/person/delete/{id}`
+### Deletar Pessoa
+
+```
+DELETE /person/delete/{id}
+```
 
 ---
 
-## 🗄️ Banco de Dados
+## Banco de Dados
 
-- Banco em memória **H2**
-- Tabelas criadas automaticamente via JPA
-- Ideal para testes e aprendizado
+A aplicação utiliza banco H2 em memória:
+
+- Inicialização automática
+- Criação automática de tabelas via JPA
+- Ideal para testes e desenvolvimento
+
+Configuração exemplo:
+
+```
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+```
 
 ---
 
-## 🧪 Testes
+## Como Executar o Projeto
 
-- Testes realizados com **Postman**
-- Envio de JSON no Body
-- Validação de status HTTP
-- Teste de todos os métodos (GET, POST, PUT, DELETE)
+### Pré-requisitos
+
+- Java instalado
+- Maven instalado
+
+### Passos
+
+Clone o repositório:
+
+```
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+Acesse a pasta:
+
+```
+cd seu-repositorio
+```
+
+Execute:
+
+```
+mvn spring-boot:run
+```
+
+A aplicação ficará disponível em:
+
+```
+http://localhost:8080
+```
 
 ---
 
-## 🎯 Objetivo do Projeto
+## Testes
+
+Os testes foram realizados utilizando Postman, validando:
+
+- Métodos HTTP
+- Respostas JSON
+- Status codes
+- Tratamento de erros (400, 404, 405)
+
+Para executar testes automatizados:
+
+```
+mvn test
+```
+
+---
+
+## Segurança e Qualidade
+
+Boas práticas aplicadas no projeto:
+
+- Atualização de dependências vulneráveis
+- Tratamento de exceções
+- Separação em camadas
+- Código limpo e legível
+- Logging configurado
+- Validação de entradas
+
+---
+
+## Objetivos do Projeto
 
 - Aprender Spring Boot na prática
-- Criar uma API REST funcional
-- Entender Controller, Service e Repository
-- Trabalhar com JPA e persistência
-- Versionar projeto com Git e GitHub
+- Entender arquitetura REST
+- Trabalhar com persistência usando JPA
+- Estruturar aplicações backend
+- Versionar código com Git e GitHub
 
 ---
