@@ -5,6 +5,7 @@ import com.julio.crud.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/person")
@@ -16,15 +17,15 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @GetMapping ("/read")
+    @GetMapping ("")
     public List<Person> getAll() {return personService.getAll();}
 
-    @PostMapping ("/create")
+    @PostMapping ("")
     public Person create(@RequestBody Person person) {return personService.create(person);}
 
-    @DeleteMapping ("/delete/{id}")
-    public void delete(@PathVariable Long id) {personService.deleteById(id);}
+    @DeleteMapping ("/{id}")
+    public void delete(@PathVariable UUID id) {personService.deleteById(id);}
 
-    @PutMapping ("/update/{id}")
-    public Person update  (@PathVariable Long id, @RequestBody Person person) {return personService.updateById(id, person);}
+    @PutMapping ("/{id}")
+    public Person update  (@PathVariable UUID id, @RequestBody Person person) {return personService.updateById(id, person);}
 }
