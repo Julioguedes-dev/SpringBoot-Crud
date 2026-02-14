@@ -12,11 +12,9 @@ Este projeto consiste em uma API REST desenvolvida em Java utilizando Spring Boo
 - Spring Boot
 - Spring Web
 - Spring Data JPA
-- Banco de dados H2
+- PostgreSQL
 - Maven
 - Postman
-- JUnit
-- AssertJ
 
 ---
 
